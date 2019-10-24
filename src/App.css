@@ -18,6 +18,7 @@
   color: #09d3ac;
 }
 
+
 .logo {
   height: 15vmin;
   background: rgba(122, 112, 112, 0.479);
@@ -36,4 +37,28 @@
 }
 .subtitle {
   font-size: 15px;
+  
+.recipe-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipes {
+  width: 50%;
+}
+
+.recipe {
+  background-color: #d1e0e0;
+  padding: 4%;
+  margin: 4%;
+}
+
+.img-recipe {
+  max-width: 80%;
+  margin: 3%;
+}
+
+.p-recipe {
+  margin-block-start: 10px;
+  margin-block-end: 10px;
 }

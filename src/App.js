@@ -1,8 +1,9 @@
 import React from "react";
-
 import "./App.css";
 import TopHeader from "./components/TopHeader/TopHeader";
 import FoodNews from "./components/FoodNews/FoodNews";
+import Recipes from "./components/Recipes";
+
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
       </header>
       <main>
         <FoodNews key="foodnews" title="What should be our next recipe?" />
-      </main>
+       <div>
+        <Recipes />
+      </div>
+    </main>
     </div>
   );
 }
