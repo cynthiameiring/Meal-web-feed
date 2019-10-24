@@ -1,24 +1,22 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
+import TopHeader from "./components/TopHeader/TopHeader";
+import FoodNews from "./components/FoodNews/FoodNews";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React!!
-        </a>
+        <TopHeader
+          link="https://cdn3.iconfinder.com/data/icons/food-155/100/Healthy_food_1-512.png"
+          content="Our Recipe Collection"
+          txt="Welcome to our site, enjoy!"
+        />
       </header>
+      <main>
+        <FoodNews key="foodnews" title="What should be our next recipe?" />
+      </main>
     </div>
   );
 }
