@@ -1,0 +1,10 @@
+.contacts {
+  margin: 20px 20% 20px;
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url("https://www.w3schools.com/cssref/border.png") 30 round;
+}
+.contacts a:hover {
+  background-color: #ddd;
+  color: black;
+}

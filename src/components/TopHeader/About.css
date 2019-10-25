@@ -1,0 +1,13 @@
+.about li {
+  list-style-type: none;
+}
+.about img {
+  border-radius: 30px;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.about img:hover {
+  transform: scale(1.5);
+}

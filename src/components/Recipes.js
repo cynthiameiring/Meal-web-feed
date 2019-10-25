@@ -68,6 +68,7 @@ export default class Recipes extends React.Component {
         url={meal.strMealThumb}
         incrementLike={this.incrementLike} //callback prop
         likes={meal.likes}
+        key={meal.idMeal}
       />
     );
   };
