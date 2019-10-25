@@ -10,23 +10,26 @@ export default class SingleRecipe extends Component {
   //     incrementScore: PropTypes.func.isRequired
   //   };
 
-  handleClick = () => {
+  handleClickIncrement = () => {
     this.props.incrementLike(this.props.id); // callback prop
   };
 
   render() {
+    const id = this.props.id;
     return (
       <div className="recipes">
         <div className="recipe">
-          <img
-            className="img-recipe"
-            alt="Cannot be displayed"
-            src={this.props.link}
-          />
+          <a href={`./recipes/${id}`}>
+            <img
+              className="img-recipe"
+              alt="Cannot be displayed"
+              src={this.props.url}
+            />
+          </a>
           <h3 className="p-recipe">{this.props.name}</h3>
           <p>
             Like this recipe:{" "}
-            <button className="plus-button" onClick={this.handleClick}>
+            <button className="plus-button" onClick={this.handleClickIncrement}>
               +
             </button>
           </p>
