@@ -26,7 +26,7 @@ export default class Recipes extends React.Component {
             return myMeal;
           });
           this.setState({ data: data.meals });
-          console.log("this is my data:", data);
+          // console.log("this is my data:", data);
         })
         .then(() => this.setState({ loading: false }))
         .catch(() => this.setState({ error: true }))
@@ -39,7 +39,7 @@ export default class Recipes extends React.Component {
     } else if (this.state.error) {
       return <div>{"error with fetching data"}</div>;
     }
-    console.log("Rendering");
+    // console.log("Rendering");
     return (
       <div className="recipe-container">
         {this.state.data.map(this.renderRecipe)}

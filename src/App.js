@@ -8,7 +8,6 @@ import DetailRecipePage from "./components/DetailRecipePage";
 import About from "./components/TopHeader/About";
 import Contact from "./components/TopHeader/Contact";
 
-
 function App() {
   return (
     <div className="App">
@@ -20,30 +19,27 @@ function App() {
         />
       </header>
       <main>
-<div>
-        <Route
-          path="/"
-          exact
-          render={props => (
-            <FoodNews
-              {...props}
-              key="foodnews"
-              title="What should be our next recipe?"
-            />
-          )}
-        />
-        <Route
-          path="/about"
-          render={props => <About {...props} didit="I did it" />}
-        />
-        <Route path="/contact" component={Contact} />
-          
-          
-         </div> 
+        <div>
+          <Route
+            path="/"
+            exact
+            render={props => (
+              <FoodNews
+                {...props}
+                key="foodnews"
+                title="What should be our next recipe?"
+              />
+            )}
+          />
+          <Route
+            path="/about"
+            render={props => <About {...props} didit="I did it" />}
+          />
+          <Route path="/contact" component={Contact} />
+        </div>
         <div>
           <Route exact path="/" component={Recipes} />
           <Route path="/recipes/:id" component={DetailRecipePage} />
-
         </div>
       </main>
     </div>
