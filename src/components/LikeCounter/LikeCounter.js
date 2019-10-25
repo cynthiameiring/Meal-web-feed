@@ -15,7 +15,7 @@ export default class LikeCounter extends Component {
     return (
       <div>
         <p className="par">
-          This post has <b>{this.state.numLikes}</b> likes!
+          This page has <b>{this.state.numLikes}</b> likes!
           <button onClick={this.increment}>Like</button>
         </p>
       </div>
