@@ -6,7 +6,7 @@ export default class Comment extends React.Component {
     return (
       <div className="commenting">
         <p>
-          Comment no.{this.props.id}: {this.props.name}
+          Comment no.{this.props.id}: "{this.props.name}"
         </p>
       </div>
     );

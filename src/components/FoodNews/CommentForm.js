@@ -1,11 +1,9 @@
 import React from "react";
 import "./Comment.css";
-
 export default class CommentForm extends React.Component {
   state = {
     name: ""
   };
-
   handleSubmit = event => {
     event.preventDefault();
     console.log(`Submitted my form with this comment: ${this.state.name}`);
@@ -14,16 +12,14 @@ export default class CommentForm extends React.Component {
     //clear the typed data from the input
     this.setState({ name: "" });
   };
-
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
   };
-
   render() {
     return (
-      <div className="commenform">
+      <div className="commentform">
         <h3> Comment your choice:</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Add comment:</label>
@@ -33,7 +29,7 @@ export default class CommentForm extends React.Component {
             value={this.state.name}
             onChange={this.handleChange}
           />
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" className="submit" />
         </form>
       </div>
     );
