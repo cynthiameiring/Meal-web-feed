@@ -3,7 +3,8 @@ import "./App.css";
 import TopHeader from "./components/TopHeader/TopHeader";
 import FoodNews from "./components/FoodNews/FoodNews";
 import Recipes from "./components/Recipes";
-
+import { Route } from "react-router-dom";
+import DetailRecipePage from "./components/DetailRecipePage";
 
 function App() {
   return (
@@ -17,10 +18,11 @@ function App() {
       </header>
       <main>
         <FoodNews key="foodnews" title="What should be our next recipe?" />
-       <div>
-        <Recipes />
-      </div>
-    </main>
+        <div>
+          <Route exact path="/" component={Recipes} />
+          <Route path="/recipes/:id" component={DetailRecipePage} />
+        </div>
+      </main>
     </div>
   );
 }

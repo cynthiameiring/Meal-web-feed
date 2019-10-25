@@ -11,7 +11,7 @@ export default class Recipes extends React.Component {
 
   componentDidMount() {
     return (
-      fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian")
+      fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=British")
         .then(response => response.json())
         // .then(data => console.log("this is a test", data)) DONT do this because in the next step (posts) you need the output from this step, but here you dont return anything
         // .then(data => {
@@ -27,13 +27,6 @@ export default class Recipes extends React.Component {
           });
           this.setState({ data: data.meals });
           console.log("this is my data:", data);
-        })
-        .then(() => {
-          // remove the last element of the data array to have an even number of recipes, so it fits nicely on the page
-          let filteredMeals = this.state.data;
-          filteredMeals.pop();
-          this.setState({ data: filteredMeals });
-          console.log("this is my new data", this.state.data);
         })
         .then(() => this.setState({ loading: false }))
         .catch(() => this.setState({ error: true }))
@@ -55,8 +48,7 @@ export default class Recipes extends React.Component {
   }
 
   incrementLike = userId => {
-    console.log("Meal id:", userId);
-
+    //console.log("Meal id:", userId);
     const updatedMeals = this.state.data.map(meal => {
       if (meal.idMeal === userId) {
         // make a copy of the meal, with updated likes
@@ -64,8 +56,7 @@ export default class Recipes extends React.Component {
       }
       return meal;
     });
-
-    console.log("updated meals", updatedMeals);
+    //console.log("updated meals", updatedMeals);
     this.setState({ data: updatedMeals });
   };
 
@@ -74,7 +65,7 @@ export default class Recipes extends React.Component {
       <SingleRecipe
         id={meal.idMeal}
         name={meal.strMeal}
-        link={meal.strMealThumb}
+        url={meal.strMealThumb}
         incrementLike={this.incrementLike} //callback prop
         likes={meal.likes}
       />
